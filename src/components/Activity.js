@@ -7,9 +7,9 @@ import { fetchActivity } from '../actions';
 const Activity = props => {
   return (
     <div>
-      <button onClick={props.fetchActivity}>Get Activity</button>
+      <button onClick={props.fetchActivity}>Get Photo</button>
       {!props.activity && !props.isLoading && (
-        <h2>Go ahead a fetch a new activity!</h2>
+        <h2>Go ahead a fetch a photo of the day!!!</h2>
       )}
       {props.isLoading && (
         <Loader
