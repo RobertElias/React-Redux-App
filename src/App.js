@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Get NASA Photo here...</h1>
+        <h1>Get Chuck Norris Wisdom Here...</h1>
+        <img className="chuck"></img>
         <Activity/>
       </header>
     </div>

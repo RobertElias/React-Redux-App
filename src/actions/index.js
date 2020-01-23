@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const fetchActivity = () => dispatch => {
+export const fetchNorris = () => dispatch => {
   dispatch({ type: 'FETCHING_ACTIVITY_START' });
   axios
-    .get('https://api.nasa.gov/planetary/apod?api_key=YvRdRgaQrdbXP78gKmVFQ5osJmsSyrjwQ8gflbH6')
+    .get('https://api.chucknorris.io/jokes/random')
     .then(res => {
         console.log(res.data)
       //res.data ==> activity

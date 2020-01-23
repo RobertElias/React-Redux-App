@@ -1,6 +1,6 @@
 const initialState = {
     isLoading: false,
-    activity: null,
+    value: null,   
     error: ''
   };
   
@@ -15,7 +15,8 @@ const initialState = {
         return {
           ...state,
           isLoading: false,
-          activity: action.payload
+          value: action.payload
+          
         };
       default:
         return state;

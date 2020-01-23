@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
-import { fetchActivity } from '../actions';
+import { fetchNorris } from '../actions';
 
-const Activity = props => {
+const Wisdom = props => {
   return (
     <div>
-      <button onClick={props.fetchActivity}>Get Photo</button>
-      {!props.activity && !props.isLoading && (
-        <h2>Go ahead a fetch a photo of the day!!!</h2>
+      <button onClick={props.fetchNorris}>Get Chucked</button>
+      {!props.value && !props.isLoading && (
+        <h2>Chuck says "I dare you to try"</h2>
       )}
       {props.isLoading && (
         <Loader
@@ -20,20 +20,22 @@ const Activity = props => {
           timeout={3000} //3 secs
         />
       )}
-      {props.activity && !props.isLoading && <h2>{props.activity.activity}</h2>}
+      {props.value && !props.isLoading && <h2>{props.value.value}</h2>}
+      
     </div>
+
   );
 };
 
 const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
-    activity: state.activity,
+    value: state.value,
     error: state.error
   };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchActivity }
-)(Activity);
+  { fetchNorris }
+)(Wisdom);
